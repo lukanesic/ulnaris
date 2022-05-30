@@ -1,0 +1,29 @@
+.patient {
+  border-bottom: 1px solid rgb(180, 227, 255);
+  padding: 2rem;
+  text-align: center;
+
+  h4 {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgb(46, 178, 255);
+  }
+
+  p {
+    color: rgb(46, 178, 255);
+    font-weight: 300;
+    padding: 1rem 0;
+
+    span {
+      font-weight: 500;
+    }
+  }
+
+  button {
+    background-color: rgb(46, 178, 255);
+    color: #fff;
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    border: none;
+  }
+}

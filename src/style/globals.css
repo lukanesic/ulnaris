@@ -1,10 +1,194 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900");
+.logo h1 {
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 400;
+}
+
+.image {
+  width: 250px;
+  height: 250px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  margin: 2rem auto;
+  border-radius: 50%;
+}
+
+.about {
+  color: #fff;
+}
+
+.about h2 {
+  font-weight: 400;
+  font-size: 1.3rem;
+}
+
+.about p {
+  line-height: 1.5rem;
+  padding: 1rem 0;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+.hero {
+  padding: 3rem;
+  width: 30%;
+  background: #2eb2ff;
+}
+
+.header h1 {
+  font-size: 1.5rem;
+  color: #2eb2ff;
+}
+
+.search {
+  border: 1px solid red;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 1rem;
+  border-radius: 20px;
+  border: 1px solid #2eb2ff;
+  color: #2eb2ff;
+  margin-top: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.2rem;
+}
+
+.search input {
+  margin: 0rem 2rem;
+  border: none;
+  outline: none;
+  width: 250px;
+  border-bottom: 1px solid transparent;
+  -webkit-transition: border-bottom 0.4s linear;
+  transition: border-bottom 0.4s linear;
+  font-size: 1.1rem;
+  color: #04a3ff;
+}
+
+.search input::-webkit-input-placeholder {
+  color: #b4e3ff;
+}
+
+.search input:-ms-input-placeholder {
+  color: #b4e3ff;
+}
+
+.search input::-ms-input-placeholder {
+  color: #b4e3ff;
+}
+
+.search input::placeholder {
+  color: #b4e3ff;
+}
+
+.patient {
+  border-bottom: 1px solid #b4e3ff;
+  padding: 2rem;
+  text-align: center;
+}
+
+.patient h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #2eb2ff;
+}
+
+.patient p {
+  color: #2eb2ff;
+  font-weight: 300;
+  padding: 1rem 0;
+}
+
+.patient p span {
+  font-weight: 500;
+}
+
+.patient button {
+  background-color: #2eb2ff;
+  color: #fff;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  border: none;
+}
+
+.patients {
+  width: 40%;
+  padding: 3rem 3rem;
+  overflow: scroll;
+}
+
+.patients .patients-container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (50%)[2];
+      grid-template-columns: repeat(2, 50%);
+  margin-top: 3rem;
+  grid-gap: 1rem;
+}
+
+.patient-section {
+  border: 1px solid green;
+  width: 40%;
+}
+
+.button {
+  border: 1px solid #fff;
+  margin: 2rem 0;
+  padding: 1rem 1rem;
+  border-radius: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #fff;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.button .plus {
+  font-size: 2rem;
+  color: #2eb2ff;
+}
+
+.button button {
+  border: none;
+  background: none;
+  color: #2eb2ff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
 * {
   margin: 0;
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
+}
+
+.app-container {
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 /*# sourceMappingURL=globals.css.map */

@@ -1,7 +1,13 @@
-function App() {
+import Hero from './components/Hero'
+import Patients from './components/Patients'
+import PatientSection from './components/PatientSection'
+
+const App = () => {
   return (
-    <div className='App'>
-      <h1>Ulnaris</h1>
+    <div className='app-container'>
+      <Hero />
+      <Patients />
+      <PatientSection />
     </div>
   )
 }
