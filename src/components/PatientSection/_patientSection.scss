@@ -1,4 +1,7 @@
+@import './PHeader/pHeader';
+@import './PHistory/pHistory';
+
 .patient-section {
-  border: 1px solid green;
   width: 40%;
+  overflow: scroll;
 }

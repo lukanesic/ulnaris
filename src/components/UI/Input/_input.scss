@@ -1,0 +1,31 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+
+  label {
+    font-size: 1.3rem;
+    color: rgb(46, 178, 255);
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+  }
+
+  input {
+    border-radius: 20px;
+    outline: none;
+    padding: 1rem;
+    border: none;
+    border: 1px solid rgb(99, 198, 255);
+    font-size: 1.1rem;
+    transition: border 0.5s ease;
+    color: rgb(0, 126, 199);
+  }
+
+  input:focus {
+    border: 1px solid rgb(0, 126, 199);
+  }
+
+  input::placeholder {
+    color: #cecece;
+  }
+}

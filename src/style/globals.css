@@ -31,9 +31,47 @@
   font-size: 1rem;
 }
 
+.patient-form {
+  position: relative;
+}
+
+.patient-form .close {
+  position: absolute;
+  top: -1rem;
+  right: 1rem;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #2eb2ff;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.patient-form .close:hover {
+  color: #007ec7;
+}
+
+.patient-form form {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (auto)[2];
+      grid-template-columns: repeat(2, auto);
+  grid-gap: 1rem;
+  padding: 0 2rem;
+}
+
+.add-patient {
+  width: 1000px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  background: #fff;
+  border-radius: 10px;
+  padding: 2rem 0;
+}
+
 .hero {
   padding: 3rem;
-  width: 30%;
+  width: 500px;
   background: #2eb2ff;
 }
 
@@ -68,9 +106,6 @@
   border: none;
   outline: none;
   width: 250px;
-  border-bottom: 1px solid transparent;
-  -webkit-transition: border-bottom 0.4s linear;
-  transition: border-bottom 0.4s linear;
   font-size: 1.1rem;
   color: #04a3ff;
 }
@@ -119,6 +154,13 @@
   padding: 0.8rem 1rem;
   border-radius: 20px;
   border: none;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+  cursor: pointer;
+}
+
+.patient button:hover {
+  background: #007ec7;
 }
 
 .patients {
@@ -136,9 +178,79 @@
   grid-gap: 1rem;
 }
 
+.p-header {
+  background: #2eb2ff;
+  padding: 3rem;
+  color: #fff;
+}
+
+.p-header h2 {
+  padding: 0.5rem 0;
+}
+
+.p-header h4 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  padding-bottom: 0.5rem;
+}
+
+.p-header h5 {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.p-history {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (45%)[2];
+      grid-template-columns: repeat(2, 45%);
+  grid-gap: 1rem;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-left: 1px solid #2eb2ff;
+}
+
+.p-history .p-box {
+  border: 1px solid #2eb2ff;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.p-history .p-box h5 {
+  color: #2eb2ff;
+  font-weight: 400;
+}
+
+.p-history .p-box h5 span {
+  font-weight: 600;
+}
+
+.p-history .p-box .p-box-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-top: 1rem;
+}
+
+.p-history .p-box .p-box-btns button {
+  border: none;
+  background: none;
+  color: #2eb2ff;
+  cursor: pointer;
+}
+
 .patient-section {
-  border: 1px solid green;
   width: 40%;
+  overflow: scroll;
 }
 
 .button {
@@ -164,6 +276,12 @@
 .button .plus {
   font-size: 2rem;
   color: #2eb2ff;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.button .plus:hover {
+  color: #007ec7;
 }
 
 .button button {
@@ -174,6 +292,92 @@
   font-size: 1rem;
   cursor: pointer;
   margin-left: 2rem;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.button button:hover {
+  color: #007ec7;
+}
+
+.dark {
+  border: 1px solid #2eb2ff;
+  margin-left: 3rem;
+}
+
+.backdrop {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem;
+}
+
+.input label {
+  font-size: 1.3rem;
+  color: #2eb2ff;
+  font-weight: 500;
+  padding-bottom: 0.5rem;
+}
+
+.input input {
+  border-radius: 20px;
+  outline: none;
+  padding: 1rem;
+  border: none;
+  border: 1px solid #63c6ff;
+  font-size: 1.1rem;
+  -webkit-transition: border 0.5s ease;
+  transition: border 0.5s ease;
+  color: #007ec7;
+}
+
+.input input:focus {
+  border: 1px solid #007ec7;
+}
+
+.input input::-webkit-input-placeholder {
+  color: #cecece;
+}
+
+.input input:-ms-input-placeholder {
+  color: #cecece;
+}
+
+.input input::-ms-input-placeholder {
+  color: #cecece;
+}
+
+.input input::placeholder {
+  color: #cecece;
+}
+
+.sidemenu {
+  width: 460px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background-color: black;
 }
 
 * {

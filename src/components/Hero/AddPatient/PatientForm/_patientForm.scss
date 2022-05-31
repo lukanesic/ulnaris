@@ -1,0 +1,23 @@
+.patient-form {
+  position: relative;
+  .close {
+    position: absolute;
+    top: -1rem;
+    right: 1rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: rgb(46, 178, 255);
+    transition: color 0.5s ease;
+  }
+
+  .close:hover {
+    color: rgb(0, 126, 199);
+  }
+
+  form {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-gap: 1rem;
+    padding: 0 2rem;
+  }
+}

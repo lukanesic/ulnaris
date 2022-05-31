@@ -1,0 +1,39 @@
+.p-history {
+  display: grid;
+  grid-template-columns: repeat(2, 45%);
+  grid-gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-left: 1px solid rgb(46, 178, 255);
+
+  .p-box {
+    border: 1px solid rgb(46, 178, 255);
+    border-radius: 20px;
+    padding: 1rem;
+    text-align: center;
+
+    h5 {
+      color: rgb(46, 178, 255);
+      font-weight: 400;
+
+      span {
+        font-weight: 600;
+      }
+    }
+
+    .p-box-btns {
+      display: flex;
+      justify-content: space-around;
+      padding-top: 1rem;
+
+      button {
+        border: none;
+        background: none;
+        color: rgb(46, 178, 255);
+        cursor: pointer;
+      }
+    }
+  }
+}

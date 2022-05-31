@@ -5,6 +5,9 @@
 @import './../components/Patients/patients';
 @import './../components/PatientSection/patientSection';
 @import './../components/UI/Button/button';
+@import './../components/Backdrop/backdrop';
+@import './../components/UI/Input/input';
+@import './../components/Sidemenu/sidemenu';
 
 * {
   margin: 0;
@@ -18,3 +21,5 @@
   width: 100%;
   display: flex;
 }
+
+// rgb(46, 178, 255);

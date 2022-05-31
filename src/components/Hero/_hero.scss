@@ -1,9 +1,10 @@
 @import './Logo/logo';
 @import './Image/image';
 @import './About/about';
+@import './AddPatient/addPatient';
 
 .hero {
   padding: 3rem;
-  width: 30%;
+  width: 500px;
   background: rgb(46, 178, 255);
 }
