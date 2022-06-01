@@ -7,7 +7,6 @@
 @import './../components/UI/Button/button';
 @import './../components/Backdrop/backdrop';
 @import './../components/UI/Input/input';
-@import './../components/Sidemenu/sidemenu';
 
 * {
   margin: 0;
@@ -18,8 +17,46 @@
 
 .app-container {
   height: 100vh;
-  width: 100%;
+  min-width: 1200px;
+
+  margin: 0 auto;
   display: flex;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-content: center;
+
+  .login-form {
+    width: 500px;
+    margin-top: 2rem;
+  }
+
+  button {
+    width: fit-content;
+    display: block;
+    margin: 2rem auto;
+    border: none;
+    background: rgb(46, 178, 255);
+    padding: 0.8rem 5rem;
+    color: #fff;
+
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background 0.5s ease;
+  }
+
+  button:hover {
+    background: rgb(0, 126, 199);
+  }
+
+  span {
+    color: rgb(255, 87, 87);
+    margin-left: 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 // rgb(46, 178, 255);

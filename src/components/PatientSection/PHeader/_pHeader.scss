@@ -17,4 +17,19 @@
     font-size: 1rem;
     font-weight: 400;
   }
+
+  button {
+    background-color: #fff;
+    color: rgb(46, 178, 255);
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    border: none;
+    transition: color 0.5s ease;
+    cursor: pointer;
+    margin: 1rem 0;
+  }
+
+  button:hover {
+    color: rgb(0, 126, 199);
+  }
 }

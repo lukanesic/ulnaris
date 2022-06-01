@@ -1,9 +1,12 @@
 @import './PatientForm/patientForm';
 
 .add-patient {
-  width: 1000px;
-  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
   background: #fff;
   border-radius: 10px;
   padding: 2rem 0;
+  z-index: 20;
 }

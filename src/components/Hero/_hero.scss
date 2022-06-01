@@ -7,4 +7,21 @@
   padding: 3rem;
   width: 500px;
   background: rgb(46, 178, 255);
+
+  .logout {
+    display: flex;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff;
+    cursor: pointer;
+    width: fit-content;
+    border-bottom: 1px solid transparent;
+    padding-bottom: 0.4rem;
+    transition: border-bottom 0.5s ease;
+
+    h3 {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+    }
+  }
 }

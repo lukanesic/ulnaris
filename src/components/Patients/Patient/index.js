@@ -1,13 +1,21 @@
 import React from 'react'
 
-const Patient = () => {
+import { useDispatch } from 'react-redux'
+import { selecedPatient } from '../../../redux/patientSlice'
+
+const Patient = ({ patient }) => {
+  const dispatch = useDispatch()
+
+  const { name, jmbg } = patient
   return (
     <div className='patient'>
-      <h4>Patient Name</h4>
+      <h4>{name}</h4>
       <p>
-        JMBG: <span>041041024031</span>
+        JMBG: <span>{jmbg}</span>
       </p>
-      <button>Pogledaj Pacijenta</button>
+      <button onClick={() => dispatch(selecedPatient(patient))}>
+        Pogledaj Pacijenta
+      </button>
     </div>
   )
 }

@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Logo = () => {
+const Logo = ({ cls }) => {
   return (
     <div className='logo'>
-      <h1>Ulnaris Physiotherapy</h1>
+      <h1 className={`light ${cls}`}>Ulnaris Physiotherapy</h1>
     </div>
   )
 }

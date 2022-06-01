@@ -1,10 +1,12 @@
 import React from 'react'
 
-const PHistory = () => {
+const PHistory = ({ examinations }) => {
   return (
     <div className='p-history'>
-      {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16].map((item) => (
-        <PHBox />
+      {!examinations && <h1>No data found</h1>}
+
+      {examinations.map((examination, index) => (
+        <PHBox examination={examination} key={index} />
       ))}
     </div>
   )
@@ -12,7 +14,7 @@ const PHistory = () => {
 
 export default PHistory
 
-const PHBox = () => {
+const PHBox = ({ examination }) => {
   return (
     <div className='p-box'>
       <h5>

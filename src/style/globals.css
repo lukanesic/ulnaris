@@ -1,9 +1,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900");
-.logo h1 {
+.logo .light {
   font-size: 1.6rem;
   color: #fff;
   font-weight: 400;
+}
+
+.logo .sec {
+  color: #2eb2ff;
+  font-size: 2rem;
+  font-weight: 500;
+  margin-left: 1rem;
+  position: relative;
+}
+
+.logo .sec:after {
+  content: '';
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  width: 4rem;
+  height: 2px;
+  background: #2eb2ff;
 }
 
 .image {
@@ -51,28 +69,48 @@
 }
 
 .patient-form form {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: (auto)[2];
-      grid-template-columns: repeat(2, auto);
-  grid-gap: 1rem;
   padding: 0 2rem;
 }
 
 .add-patient {
-  width: 1000px;
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
   background: #fff;
   border-radius: 10px;
   padding: 2rem 0;
+  z-index: 20;
 }
 
 .hero {
   padding: 3rem;
   width: 500px;
   background: #2eb2ff;
+}
+
+.hero .logout {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-bottom: 1px solid transparent;
+  padding-bottom: 0.4rem;
+  -webkit-transition: border-bottom 0.5s ease;
+  transition: border-bottom 0.5s ease;
+}
+
+.hero .logout h3 {
+  margin-left: 1rem;
+  font-size: 1.2rem;
 }
 
 .header h1 {
@@ -199,6 +237,22 @@
   font-weight: 400;
 }
 
+.p-header button {
+  background-color: #fff;
+  color: #2eb2ff;
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  border: none;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+  cursor: pointer;
+  margin: 1rem 0;
+}
+
+.p-header button:hover {
+  color: #007ec7;
+}
+
 .p-history {
   display: -ms-grid;
   display: grid;
@@ -280,10 +334,6 @@
   transition: color 0.5s ease;
 }
 
-.button .plus:hover {
-  color: #007ec7;
-}
-
 .button button {
   border: none;
   background: none;
@@ -296,28 +346,42 @@
   transition: color 0.5s ease;
 }
 
-.button button:hover {
-  color: #007ec7;
+.dark {
+  background: #2eb2ff;
+  margin-left: 3rem;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
 }
 
-.dark {
-  border: 1px solid #2eb2ff;
-  margin-left: 3rem;
+.dark .plus {
+  font-size: 2rem;
+  color: #fff;
+}
+
+.dark button {
+  border: none;
+  background: none;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 2rem;
+}
+
+.dark:hover {
+  background-color: #007ec7;
 }
 
 .backdrop {
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   -webkit-backdrop-filter: blur(2px);
           backdrop-filter: blur(2px);
   position: absolute;
   top: 0;
   left: 0;
   z-index: 10;
-  display: -ms-grid;
-  display: grid;
-  place-content: center;
 }
 
 .input {
@@ -336,6 +400,12 @@
   color: #2eb2ff;
   font-weight: 500;
   padding-bottom: 0.5rem;
+  -webkit-transition: color 0.5s ease;
+  transition: color 0.5s ease;
+}
+
+.input .label-wrong {
+  color: #ff5757;
 }
 
 .input input {
@@ -348,6 +418,10 @@
   -webkit-transition: border 0.5s ease;
   transition: border 0.5s ease;
   color: #007ec7;
+}
+
+.input .input-wrong {
+  border: 1px solid #ff5757;
 }
 
 .input input:focus {
@@ -370,16 +444,6 @@
   color: #cecece;
 }
 
-.sidemenu {
-  width: 460px;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 10;
-  background-color: black;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -390,9 +454,49 @@
 
 .app-container {
   height: 100vh;
-  width: 100%;
+  min-width: 1200px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: -ms-grid;
+  display: grid;
+  place-content: center;
+}
+
+.login .login-form {
+  width: 500px;
+  margin-top: 2rem;
+}
+
+.login button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: block;
+  margin: 2rem auto;
+  border: none;
+  background: #2eb2ff;
+  padding: 0.8rem 5rem;
+  color: #fff;
+  border-radius: 20px;
+  cursor: pointer;
+  -webkit-transition: background 0.5s ease;
+  transition: background 0.5s ease;
+}
+
+.login button:hover {
+  background: #007ec7;
+}
+
+.login span {
+  color: #ff5757;
+  margin-left: 1rem;
+  font-size: 0.8rem;
 }
 /*# sourceMappingURL=globals.css.map */
