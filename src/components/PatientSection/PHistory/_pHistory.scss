@@ -6,7 +6,11 @@
   justify-content: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-left: 1px solid rgb(46, 178, 255);
+
+  .no-patients {
+    font-weight: 400;
+    color: rgb(0, 95, 149);
+  }
 
   .p-box {
     border: 1px solid rgb(46, 178, 255);

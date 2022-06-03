@@ -26,6 +26,7 @@ export const fetchPatients = createAsyncThunk(
 const initialState = {
   patients: [],
   patient: {},
+  newExamination: {},
   loading: false,
   error: false,
 }
@@ -36,6 +37,22 @@ export const patientSlice = createSlice({
   reducers: {
     selecedPatient: (state, { payload }) => {
       state.patient = payload
+    },
+    setNewExamination: (state, { payload }) => {
+      state.newExamination = payload
+      state.patient.examinations.push(payload)
+    },
+    addNewPatientRequest: (state) => {
+      state.loading = true
+    },
+    addNewPatientSuccess: (state, { payload }) => {
+      state.patients.push(payload)
+      state.loading = false
+      console.log(payload)
+    },
+    addNewPatientFail: (state) => {
+      state.loading = false
+      state.error = true
     },
   },
   extraReducers: {
@@ -53,5 +70,11 @@ export const patientSlice = createSlice({
   },
 })
 
-export const { selecedPatient } = patientSlice.actions
+export const {
+  selecedPatient,
+  setNewExamination,
+  addNewPatientFail,
+  addNewPatientRequest,
+  addNewPatientSuccess,
+} = patientSlice.actions
 export default patientSlice.reducer

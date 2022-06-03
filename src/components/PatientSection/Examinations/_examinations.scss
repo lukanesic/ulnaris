@@ -1,0 +1,126 @@
+.examinations {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  border-radius: 20px;
+  z-index: 20;
+  background: #fff;
+  padding: 3rem;
+  overflow: scroll;
+
+  h2 {
+    font-weight: 200;
+    font-size: 3rem;
+    color: rgb(46, 178, 255);
+
+    span {
+      font-weight: 400;
+    }
+  }
+
+  h4 {
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: rgb(46, 178, 255);
+    padding: 1rem 0;
+  }
+
+  .exam-icons {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    width: 100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .exam-container-to-print {
+    position: relative;
+    height: 100%;
+  }
+
+  .exam {
+    padding: 2rem 0;
+    border-bottom: 1px solid #cecece;
+
+    h5 {
+      font-size: 1.2rem;
+      font-weight: 400;
+      padding: 0.5rem 0;
+    }
+  }
+
+  .signature {
+    position: absolute;
+    right: 2rem;
+    bottom: 2rem;
+  }
+
+  .add-exam-form {
+    .date {
+      display: flex;
+      flex-direction: column;
+
+      label {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+      }
+
+      input {
+        width: 200px;
+        border: none;
+        border-bottom: 1px solid #cecece;
+        padding: 0.5rem;
+        outline: none;
+        font-size: 1rem;
+      }
+    }
+
+    .new-exam {
+      display: flex;
+      flex-direction: column;
+      padding: 1rem 0;
+
+      label {
+        font-size: 1.4rem;
+        padding: 1rem 0;
+      }
+
+      // input {
+      //   width: 500px;
+      //   height: inherit;
+      //   border: none;
+      //   padding: 0.5rem;
+      //   outline: none;
+      //   font-size: 5rem;
+      // }
+
+      textarea {
+        font-size: 1.3rem;
+        resize: none;
+        border: none;
+        // border: 1px solid #cecece;
+        // border-radius: 4px;
+        height: 300px;
+        outline: none;
+        line-height: 1.8rem;
+        font-weight: 300;
+      }
+    }
+  }
+
+  button {
+    padding: 0.8rem 1rem;
+    border-radius: 20px;
+    border: none;
+    background: rgb(46, 178, 255);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+}

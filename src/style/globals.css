@@ -216,6 +216,11 @@
   grid-gap: 1rem;
 }
 
+.patients .no-patients {
+  color: #005f95;
+  font-weight: 400;
+}
+
 .p-header {
   background: #2eb2ff;
   padding: 3rem;
@@ -235,6 +240,7 @@
 .p-header h5 {
   font-size: 1rem;
   font-weight: 400;
+  padding: 0.5rem 0;
 }
 
 .p-header button {
@@ -246,7 +252,8 @@
   -webkit-transition: color 0.5s ease;
   transition: color 0.5s ease;
   cursor: pointer;
-  margin: 1rem 0;
+  margin: 1rem 0rem;
+  margin-right: 1rem;
 }
 
 .p-header button:hover {
@@ -267,7 +274,11 @@
           justify-content: center;
   padding-top: 2rem;
   padding-bottom: 2rem;
-  border-left: 1px solid #2eb2ff;
+}
+
+.p-history .no-patients {
+  font-weight: 400;
+  color: #005f95;
 }
 
 .p-history .p-box {
@@ -299,6 +310,136 @@
   border: none;
   background: none;
   color: #2eb2ff;
+  cursor: pointer;
+}
+
+.examinations {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 80%;
+  height: 90%;
+  border-radius: 20px;
+  z-index: 20;
+  background: #fff;
+  padding: 3rem;
+  overflow: scroll;
+}
+
+.examinations h2 {
+  font-weight: 200;
+  font-size: 3rem;
+  color: #2eb2ff;
+}
+
+.examinations h2 span {
+  font-weight: 400;
+}
+
+.examinations h4 {
+  font-weight: 300;
+  font-size: 1.2rem;
+  color: #2eb2ff;
+  padding: 1rem 0;
+}
+
+.examinations .exam-icons {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  font-size: 2rem;
+  width: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.examinations .exam-container-to-print {
+  position: relative;
+  height: 100%;
+}
+
+.examinations .exam {
+  padding: 2rem 0;
+  border-bottom: 1px solid #cecece;
+}
+
+.examinations .exam h5 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  padding: 0.5rem 0;
+}
+
+.examinations .signature {
+  position: absolute;
+  right: 2rem;
+  bottom: 2rem;
+}
+
+.examinations .add-exam-form .date {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.examinations .add-exam-form .date label {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+
+.examinations .add-exam-form .date input {
+  width: 200px;
+  border: none;
+  border-bottom: 1px solid #cecece;
+  padding: 0.5rem;
+  outline: none;
+  font-size: 1rem;
+}
+
+.examinations .add-exam-form .new-exam {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 1rem 0;
+}
+
+.examinations .add-exam-form .new-exam label {
+  font-size: 1.4rem;
+  padding: 1rem 0;
+}
+
+.examinations .add-exam-form .new-exam textarea {
+  font-size: 1.3rem;
+  resize: none;
+  border: none;
+  height: 300px;
+  outline: none;
+  line-height: 1.8rem;
+  font-weight: 300;
+}
+
+.examinations button {
+  padding: 0.8rem 1rem;
+  border-radius: 20px;
+  border: none;
+  background: #2eb2ff;
+  color: #fff;
+  font-size: 1.1rem;
   cursor: pointer;
 }
 

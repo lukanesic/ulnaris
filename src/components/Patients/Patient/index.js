@@ -6,10 +6,13 @@ import { selecedPatient } from '../../../redux/patientSlice'
 const Patient = ({ patient }) => {
   const dispatch = useDispatch()
 
-  const { name, jmbg } = patient
+  const { name, jmbg, surname } = patient
+
   return (
     <div className='patient'>
-      <h4>{name}</h4>
+      <h4>
+        {name} {surname}
+      </h4>
       <p>
         JMBG: <span>{jmbg}</span>
       </p>

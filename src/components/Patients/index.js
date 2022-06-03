@@ -7,9 +7,6 @@ import { useDispatch, useSelector } from 'react-redux'
 
 const Patients = () => {
   const { patients } = useSelector((state) => state.patients)
-
-  console.log(patients)
-
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -20,8 +17,12 @@ const Patients = () => {
     <div className='patients'>
       <Header />
       <div className='patients-container'>
-        {patients.map((pat) => (
-          <Patient patient={pat} />
+        {Object.keys(patients).length === 0 && (
+          <h2 className='no-patients'>Nemate pacijente!</h2>
+        )}
+
+        {patients.map((pat, index) => (
+          <Patient patient={pat} key={index} />
         ))}
       </div>
     </div>
