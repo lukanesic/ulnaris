@@ -23,12 +23,27 @@ export const fetchPatients = createAsyncThunk(
   }
 )
 
+export const fetchPatient = createAsyncThunk(
+  'patientSlice/fetchPatient',
+  async (id) => {
+    try {
+      const patientRef = doc(db, 'patients', id)
+      const patientSnap = await getDoc(patientRef)
+
+      return patientSnap.id
+    } catch (error) {
+      console.log(error)
+    }
+  }
+)
+
 const initialState = {
   patients: [],
   patient: {},
   newExamination: {},
   loading: false,
   error: false,
+  testPatient: {},
 }
 
 export const patientSlice = createSlice({
@@ -48,11 +63,46 @@ export const patientSlice = createSlice({
     addNewPatientSuccess: (state, { payload }) => {
       state.patients.push(payload)
       state.loading = false
-      console.log(payload)
     },
     addNewPatientFail: (state) => {
       state.loading = false
       state.error = true
+    },
+    deletePatientRequest: (state) => {
+      state.loading = true
+    },
+    deletePatientSuccess: (state, { payload }) => {
+      state.loading = false
+      state.patient = {}
+      state.patients = state.patients.filter(
+        (patient) => patient.id !== payload
+      )
+    },
+    deletePatientFail: (state) => {
+      state.loading = false
+      state.error = true
+    },
+    deleteExamRequest: (state) => {
+      state.loading = true
+    },
+    deleteExamSuccess: (state, { payload }) => {
+      state.loading = false
+
+      // Prvo brisem taj exam iz patient objekta koji je selektovan iz patients niza
+      state.patient.examinations = state.patient.examinations.filter(
+        (exam, index) => index !== payload.examIndex
+      )
+
+      const patientToReplace = state.patients.find(
+        (patient) => patient.id === payload.patientId
+      )
+
+      // zatim trebam da samo izbrisem isti taj iz patients iz niza. Ne trebam da vracam, vec da izbrsiem iz oba istovremeno.. E Luka
+      state.testPatient = state.patients[payload.examIndex]
+    },
+    deleteExamFail: (state, { payload }) => {
+      state.error = true
+      state.loading = false
     },
   },
   extraReducers: {
@@ -67,6 +117,18 @@ export const patientSlice = createSlice({
       state.loading = false
       state.error = true
     },
+    [fetchPatient.pending]: (state) => {
+      state.loading = true
+    },
+    [fetchPatient.fulfilled]: (state, { payload }) => {
+      state.loading = false
+
+      console.log(payload)
+    },
+    [fetchPatient.rejected]: (state) => {
+      state.loading = false
+      state.error = true
+    },
   },
 })
 
@@ -76,5 +138,11 @@ export const {
   addNewPatientFail,
   addNewPatientRequest,
   addNewPatientSuccess,
+  deletePatientFail,
+  deletePatientRequest,
+  deletePatientSuccess,
+  deleteExamFail,
+  deleteExamRequest,
+  deleteExamSuccess,
 } = patientSlice.actions
 export default patientSlice.reducer

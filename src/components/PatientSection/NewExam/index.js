@@ -9,6 +9,7 @@ import { setNewExamination } from '../../../redux/patientSlice'
 
 import { db } from '../../../firebase'
 import { doc, updateDoc, arrayUnion, arrayRemove } from 'firebase/firestore'
+import ExamContainer from '../ExamContainer'
 
 const NewExam = ({ patient, add, setAdd }) => {
   const [getExam, setGetExam] = useState('')
@@ -43,22 +44,12 @@ const NewExam = ({ patient, add, setAdd }) => {
   }
 
   return (
-    <motion.div
-      className='examinations'
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-      transition={{ duration: 0.4, delay: 0.1 }}
-    >
-      <div className='exam-icons'>
-        {/* <AiFillPrinter style={{ cursor: 'pointer' }} /> */}
-        <AiOutlineClose
-          style={{ cursor: 'pointer' }}
-          onClick={() => setAdd(!add)}
-        />
-      </div>
+    <ExamContainer show={add} setShow={setAdd}>
       <h2>
-        Pacijent - <span>{patient.name}</span>
+        Pacijent -{' '}
+        <span>
+          {patient.name} {patient.surname}
+        </span>
       </h2>
       <h4>Novi pregled</h4>
       <div className='add-exam-form'>
@@ -78,7 +69,7 @@ const NewExam = ({ patient, add, setAdd }) => {
 
         <button onClick={handleSubmit}>Sacuvaj pregled</button>
       </div>
-    </motion.div>
+    </ExamContainer>
   )
 }
 

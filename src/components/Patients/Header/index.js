@@ -1,11 +1,10 @@
 import React from 'react'
-import Search from '../Search'
 
-const Header = () => {
+const Header = ({ children }) => {
   return (
     <div className='header'>
       <h1>Pacijenti</h1>
-      <Search />
+      {children}
     </div>
   )
 }

@@ -12,14 +12,14 @@
 
   .plus {
     font-size: 2rem;
-    color: rgb(46, 178, 255);
+    color: rgb(255, 51, 51);
     transition: color 0.5s ease;
   }
 
   button {
     border: none;
     background: none;
-    color: rgb(46, 178, 255);
+    color: rgb(255, 51, 51);
     font-weight: 500;
     font-size: 1rem;
     cursor: pointer;
@@ -29,7 +29,7 @@
 }
 
 .dark {
-  background: rgb(46, 178, 255);
+  background: rgb(255, 51, 51);
   margin-left: 3rem;
   transition: background 0.5s ease;
 
@@ -50,5 +50,5 @@
 }
 
 .dark:hover {
-  background-color: rgb(0, 126, 199);
+  background-color: rgb(189, 8, 8);
 }
