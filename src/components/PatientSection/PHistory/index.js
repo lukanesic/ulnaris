@@ -49,16 +49,14 @@ const PHBox = ({ examination, examIndex, patientId }) => {
         {show && (
           <>
             <Backdrop open={show} setOpen={setShow} />
-            <ExamContainer
-              patientId={patientId}
+
+            <ViewExam
+              examination={examination}
               show={show}
               setShow={setShow}
+              patientId={patientId}
               examIndex={examIndex}
-              deleteExam
-              printer
-            >
-              <ViewExam examination={examination} />
-            </ExamContainer>
+            />
           </>
         )}
       </AnimatePresence>

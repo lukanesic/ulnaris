@@ -1,18 +1,28 @@
-import React from 'react'
+import React, { useRef } from 'react'
 import { motion } from 'framer-motion'
 import { useSelector } from 'react-redux'
 import ExamContainer from '../ExamContainer'
 
-import { ReactToPrint } from 'react-to-print'
+import { useReactToPrint } from 'react-to-print'
 
 const Examinations = ({ patient, show, setShow }) => {
   const { examinations } = patient
+  const componentRef = useRef()
+
+  const handlePrint = useReactToPrint({
+    content: () => componentRef.current,
+  })
 
   return (
-    <ExamContainer printer setShow={setShow} show={show}>
-      <div className='exam-container-to-print'>
+    <ExamContainer
+      printer
+      setShow={setShow}
+      show={show}
+      handlePrint={handlePrint}
+    >
+      <div className='exam-container-to-print' ref={componentRef}>
         <h2>
-          Pacijent -{' '}
+          Pacijent:{' '}
           <span>
             {patient.name} {patient.surname}
           </span>

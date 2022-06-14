@@ -20,6 +20,7 @@ const ExamContainer = ({
   deleteExam,
   examIndex,
   patientId,
+  handlePrint,
 }) => {
   const dispatch = useDispatch()
 
@@ -69,7 +70,7 @@ const ExamContainer = ({
           <AiFillPrinter
             style={{ cursor: 'pointer', color: 'rgb(0, 72, 114)' }}
             className='icon'
-            onClick={() => window.print()}
+            onClick={handlePrint}
           />
         )}
         <AiOutlineClose
@@ -78,9 +79,9 @@ const ExamContainer = ({
           className='icon'
         />
       </div>
-      <div className='ulnaris-header'>
+      {/* <div className='ulnaris-header'>
         <h1>Ulnaris - Ambulanta za rehabilitaciju</h1>
-      </div>
+      </div> */}
       {children}
     </motion.div>
   )
