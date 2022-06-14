@@ -27,6 +27,7 @@ const ExamContainer = ({
     dispatch(deleteExamRequest())
 
     try {
+      // ovaj code radi i brise iz baze
       const examRef = doc(db, 'patients', patientId)
       const res = await getDoc(examRef)
       const newArr = res
@@ -68,6 +69,7 @@ const ExamContainer = ({
           <AiFillPrinter
             style={{ cursor: 'pointer', color: 'rgb(0, 72, 114)' }}
             className='icon'
+            onClick={() => window.print()}
           />
         )}
         <AiOutlineClose
@@ -75,6 +77,9 @@ const ExamContainer = ({
           onClick={() => setShow(!show)}
           className='icon'
         />
+      </div>
+      <div className='ulnaris-header'>
+        <h1>Ulnaris - Ambulanta za rehabilitaciju</h1>
       </div>
       {children}
     </motion.div>

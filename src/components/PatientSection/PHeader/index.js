@@ -16,7 +16,7 @@ import {
 } from '../../../redux/patientSlice'
 
 const PHeader = ({ patient }) => {
-  const { name, jmbg, surname, email, phone, id } = patient
+  const { name, jmbg, surname, phone, id } = patient
 
   const [showExams, setShowExams] = useState(false)
   const [addExam, setAddExam] = useState(false)
@@ -56,7 +56,7 @@ const PHeader = ({ patient }) => {
               JMBG: <span>{jmbg}</span>
             </h5>
             <h5>
-              Telefon: <span>{phone}</span> | Email: <span>{email}</span>
+              Telefon: <span>{phone}</span>
             </h5>
 
             <div className='patient-btns'>

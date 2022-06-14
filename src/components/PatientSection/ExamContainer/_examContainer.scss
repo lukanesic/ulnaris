@@ -11,9 +11,15 @@
   padding: 3rem;
   overflow: scroll;
 
+  .ulnaris-header {
+    color: rgb(255, 51, 51);
+
+    text-align: left;
+  }
+
   h2 {
     font-weight: 200;
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgb(255, 51, 51);
 
     span {

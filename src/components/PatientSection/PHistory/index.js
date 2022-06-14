@@ -15,14 +15,16 @@ const PHistory = ({ patient }) => {
 
       {Object.keys(patient).length !== 0 && (
         <>
-          {patient.examinations.map((examination, index) => (
-            <PHBox
-              examination={examination}
-              key={index}
-              examIndex={index}
-              patientId={patient.id}
-            />
-          ))}
+          {patient.examinations
+            .map((examination, index) => (
+              <PHBox
+                examination={examination}
+                key={index}
+                examIndex={index}
+                patientId={patient.id}
+              />
+            ))
+            .reverse()}
         </>
       )}
     </div>

@@ -18,14 +18,16 @@ const Examinations = ({ patient, show, setShow }) => {
           </span>
         </h2>
         <h4>Celokupna istorija pregleda</h4>
-        {examinations.map((exam, index) => (
-          <div className='exam' key={index}>
-            <h5>
-              <span>{exam.date}</span>
-            </h5>
-            <p>{exam.review}</p>
-          </div>
-        ))}
+        {examinations
+          .map((exam, index) => (
+            <div className='exam' key={index}>
+              <h5>
+                <span>{exam.date}</span>
+              </h5>
+              <p>{exam.review}</p>
+            </div>
+          ))
+          .reverse()}
       </div>
     </ExamContainer>
   )

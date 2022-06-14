@@ -20,7 +20,6 @@ const PatientForm = ({ open, setOpen }) => {
     surname: { value: '', isValid: true },
     jmbg: { value: '', isValid: true },
     phone: { value: '', isValid: true },
-    email: { value: '', isValid: true },
   })
 
   const inputHandler = (identifier, value) => {
@@ -41,24 +40,14 @@ const PatientForm = ({ open, setOpen }) => {
     const surnameIsValid = newPatient.surname.value.trim().length > 0
     const jmbgIsValid = newPatient.jmbg.value.trim().length > 0
     const phoneIsValid = newPatient.phone.value.trim().length > 0
-    const emailIsValid =
-      newPatient.email.value.trim().length > 0 &&
-      newPatient.email.value.includes('@')
 
-    if (
-      !nameIsValid ||
-      !surnameIsValid ||
-      !jmbgIsValid ||
-      !phoneIsValid ||
-      !emailIsValid
-    ) {
+    if (!nameIsValid || !surnameIsValid || !jmbgIsValid || !phoneIsValid) {
       setNewPatient((current) => {
         return {
           name: { value: current.name.value, isValid: nameIsValid },
           surname: { value: current.surname.value, isValid: surnameIsValid },
           jmbg: { value: current.jmbg.value, isValid: jmbgIsValid },
           phone: { value: current.phone.value, isValid: phoneIsValid },
-          email: { value: current.email.value, isValid: emailIsValid },
         }
       })
       return
@@ -69,7 +58,6 @@ const PatientForm = ({ open, setOpen }) => {
       surname: newPatient.surname.value,
       jmbg: newPatient.jmbg.value,
       phone: newPatient.phone.value,
-      email: newPatient.email.value,
       examinations: [],
     }
 
@@ -118,13 +106,6 @@ const PatientForm = ({ open, setOpen }) => {
           type='text'
           onChange={inputHandler.bind(this, 'phone')}
           validation={newPatient.phone.isValid}
-        />
-        <Input
-          label='Email'
-          placeholder='Email pacijenta'
-          type='email'
-          onChange={inputHandler.bind(this, 'email')}
-          validation={newPatient.email.isValid}
         />
       </form>
       <Button btn='dark' onClick={submitPatient}>

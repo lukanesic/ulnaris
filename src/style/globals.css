@@ -349,9 +349,14 @@
   overflow: scroll;
 }
 
+.examinations .ulnaris-header {
+  color: #ff3333;
+  text-align: left;
+}
+
 .examinations h2 {
   font-weight: 200;
-  font-size: 3rem;
+  font-size: 2rem;
   color: #ff3333;
 }
 

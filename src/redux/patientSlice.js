@@ -93,12 +93,21 @@ export const patientSlice = createSlice({
         (exam, index) => index !== payload.examIndex
       )
 
-      const patientToReplace = state.patients.find(
-        (patient) => patient.id === payload.patientId
+      const newArr = [...state.patients]
+
+      const patientToUpdate = newArr.find(
+        (patient) => payload.patientId === patient.id
       )
 
+      const newPatientExaminations = patientToUpdate.examinations.filter(
+        (exam, index) => payload.examIndex !== index
+      )
+
+      patientToUpdate.examinations = newPatientExaminations
+
+      state.patients = newArr
+
       // zatim trebam da samo izbrisem isti taj iz patients iz niza. Ne trebam da vracam, vec da izbrsiem iz oba istovremeno.. E Luka
-      state.testPatient = state.patients[payload.examIndex]
     },
     deleteExamFail: (state, { payload }) => {
       state.error = true
