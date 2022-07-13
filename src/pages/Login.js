@@ -50,7 +50,6 @@ const Login = () => {
       return
     }
 
-    // Login auth
     try {
       const {
         user: { uid },

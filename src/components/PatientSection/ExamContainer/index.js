@@ -28,7 +28,6 @@ const ExamContainer = ({
     dispatch(deleteExamRequest())
 
     try {
-      // ovaj code radi i brise iz baze
       const examRef = doc(db, 'patients', patientId)
       const res = await getDoc(examRef)
       const newArr = res
@@ -36,9 +35,6 @@ const ExamContainer = ({
         .examinations.filter((exam, index) => index !== examIndex)
 
       await updateDoc(examRef, { examinations: newArr })
-
-      // ovo resava posao - donekle. Upada se u drugi problem. Moram da napravim za fetchovanje samo tog jednog.
-      // kada bude bilo vise njih pravice problem. Ali sam resio problem koi mi pravi neka druga stvar. Lako cu ja da fetcujem onog sto trebam na osnovu id kako bi se samo njegove updateovale
 
       setTimeout(() => {
         dispatch(deleteExamSuccess({ examIndex, patientId }))
